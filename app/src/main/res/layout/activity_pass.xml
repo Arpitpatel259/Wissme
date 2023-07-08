@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:scrollbars="none"
+    tools:context=".Pass">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <view
+                    android:id="@+id/view"
+                    class="androidx.viewpager.widget.ViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/round_bg" />
+
+                <view
+                    android:id="@+id/view2"
+                    class="androidx.viewpager.widget.ViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/design" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:text="@string/change"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="0dp"
+                    android:layout_height="122dp"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/logo" />
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/hint_pass"
+                android:textColor="@color/colorAccent"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/fetch_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:autofillHints=""
+                android:background="@drawable/setting_button"
+                android:drawableStart="@drawable/ic_username"
+                android:drawablePadding="20dp"
+                android:hint="@string/enter_user_name"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textColorHint="#100F0F" />
+
+            <EditText
+                android:id="@+id/fetch_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:autofillHints=""
+                android:background="@drawable/setting_button"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="20dp"
+                android:hint="@string/email"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textColorHint="#100F0F"
+                tools:ignore="TextFields" />
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <EditText
+                    android:id="@+id/newpass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:background="@drawable/setting_button"
+                    android:drawableStart="@drawable/ic_pass"
+                    android:drawablePadding="20dp"
+                    android:hint="@string/new_pass"
+                    android:inputType="textPassword"
+                    android:maxLength="10"
+                    android:padding="10dp"
+                    android:textColorHint="#100F0F" />
+
+                <Button
+                    android:id="@+id/show_pass4"
+                    android:layout_width="30dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center|end"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/ic_visibility"
+                    android:onClick="ShowHidePass1" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <EditText
+                    android:id="@+id/newpass1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:background="@drawable/setting_button"
+                    android:drawableStart="@drawable/ic_pass"
+                    android:drawablePadding="20dp"
+                    android:hint="@string/repassword"
+                    android:inputType="textPassword"
+                    android:maxLength="10"
+                    android:padding="10dp"
+                    android:textColorHint="#100F0F" />
+
+                <Button
+                    android:id="@+id/show_pass5"
+                    android:layout_width="30dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/ic_visibility"
+                    android:onClick="ShowHidePass2" />
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/cp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button"
+                android:text="@string/button_pass"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

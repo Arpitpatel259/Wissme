@@ -1,0 +1,7 @@
+<root>
+    <item name='android.app.Activity java.lang.Object getSystemService(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.Contract'>
+            <val name="pure" val="true" />
+        </annotation>
+    </item>
+</root>

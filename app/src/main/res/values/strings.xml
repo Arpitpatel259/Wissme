@@ -1,0 +1,128 @@
+<resources>
+    <string name="app_name">Wissme</string>
+    <string name="todo">TODO</string>
+
+    <!--Welcome Screen-->
+    <string name="welcome">Welcome</string>
+    <string name="tag">Let"s join us and build your relationship with us.</string>
+
+    <!--Login Screen-->
+    <string name="login_here">Login Here</string>
+    <string name="email">Enter Email id</string>
+    <string name="password">Enter Password</string>
+    <string name="forget">Forgot Your Password?</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Don"t have an account? Sign Up</string>
+
+    <!--Register Screen-->
+    <string name="register_here">Register Here</string>
+    <string name="firstname">Enter First Name</string>
+    <string name="lastname">Enter Last Name</string>
+    <string name="org">Organization Name</string>
+    <string name="mobile">Enter Mobile No</string>
+    <string name="unique_id">Enter Unique Id</string>
+    <string name="repassword">Confirm Password</string>
+    <string name="checkbox">Agree to our Terms and Conditions.</string>
+    <string name="register">Register</string>
+    <string name="sign_in">Already have an account? Sign In</string>
+
+    <!--Pass Screen-->
+    <string name="change">Reset password</string>
+    <string name="hint_pass">Your new password must be different from your previous password</string>
+    <string name="hint_email">Please Provide Your Email Id for Reset Your Password.</string>
+    <string name="old_pass">Current Password</string>
+    <string name="new_pass">New Password</string>
+    <string name="button_pass">Change Password</string>
+    <string name="button_reset">Reset Your Password</string>
+
+    <!--text name-->
+    <string name="work">Work</string>
+    <string name="com_work">Complete Work</string>
+    <string name="notification">Notification</string>
+    <string name="about">About Us</string>
+    <string name="logout">Log out</string>
+    <string name="setting">Setting</string>
+    <string name="video_call">Video Conference</string>
+
+    <!--Setting File-->
+    <string name="profile">Your Profile</string>
+    <string name="display">Display</string>
+    <string name="language">App Languages</string>
+    <string name="authenticate">Authentication</string>
+    <string name="help">Help</string>
+    <string name="logins">Logins</string>
+
+    <!--Buttons-->
+    <string name="theme">Theme</string>
+    <string name="app_lan">Choose Languages</string>
+    <string name="finger">Enable FingerPrint</string>
+    <string name="terms">Terms and Privacy policy</string>
+    <string name="app_info">App info</string>
+
+    <!--Profile info-->
+    <string name="name">Name : Vekariya Arpit Jayantibhai</string>
+    <string name="email_id">Email id : aj@gmail.com</string>
+    <string name="contact">Contact No : 9265032740</string>
+
+    <!--About info-->
+    <string name="arpit">Vekariya Arpit Jayantibhai</string>
+    <string name="arpit_enroll">Enrollment No : 186170316057</string>
+    <string name="arpit_contact">Contact No : 9265032740</string>
+
+    <string name="ayush">Lakhatariya Ayush AshokKumar</string>
+    <string name="ayush_enroll">Enrollment No : 186170316027</string>
+    <string name="ayush_contact">Contact No : 9998011750</string>
+
+    <string name="lukman">Shaikh Mohammad Lukman ZakirHusen</string>
+    <string name="lukman_enroll">Enrollment No : 196170316004</string>
+    <string name="lukman_contact">Contact No : 6353266707</string>
+
+    <string name="hint_finger">Use Your fingerPrint</string>
+
+    <!--Assign Work-->
+    <string name="title">Enter Work Title</string>
+    <string name="work_title">Enter work</string>
+    <string name="start_time">Start Time</string>
+    <string name="end_time">Enter Due Date</string>
+    <string name="faculty">Enter Faculty Name</string>
+    <string name="assign">Assign Work</string>
+    <string name="edit">Edit Work</string>
+    <string name="cancle">Cancel</string>
+    <string name="assign_work_to_all">Assign Work To All…</string>
+    <string name="enter_user_name">Enter User Name</string>
+    <string name="note">Note : Remember Your Email, Username, Password</string>
+    <string name="assign_work">Assign Work</string>
+    <string name="submit_work">Submit Work</string>
+    <string name="create_new_organization">Create New Organization</string>
+    <string name="classname">Enter Class Name</string>
+    <string name="title_activity_com_work_detail">ComWorkDetail</string>
+
+    <string name="hello_world">Hello Square World!</string>
+    <string name="work_details">Work Details</string>
+    <string name="title_activity_edit_work">EditWork</string>
+    <string name="submitted_work">submitted work</string>
+    <string name="class_name">Enter Class Name</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="insta">Follow on : @lukman_836</string>
+    <string name="insta1">Follow on : @i_am_arpit_</string>
+    <string name="github">Follow on : Git Hub</string>
+    <string name="dash_board">Dash Board</string>
+    <string name="edit_photo">Edit Photo</string>
+    <string name="uname">Name :</string>x
+    <string name="ucontact">Contact :</string>
+    <string name="u_unique_id">Enrollment Id :</string>
+    <string name="uorganization">Organization :</string>
+    <string name="instructions">Instructions :</string>
+    <string name="enter_file_name">Enter File Name</string>
+    <string name="upload_file">Select file</string>
+    <string name="turn_in">Turn In</string>
+
+    <string name="Arpit">Vekariya Arpit J.</string>
+    <string name="participates">Participates</string>
+    <string name="aj_vekariya123_gmail_com">aj.vekariya123@gmail.com</string>
+    <string name="numbers">+91 92650 32740</string>
+    <string name="join_meeting">Join Meeting</string>
+
+</resources>
