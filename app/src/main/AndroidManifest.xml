@@ -20,9 +20,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".VideoCall"
-            android:exported="false" />
-        <activity
             android:name=".Participate"
             android:exported="false" />
         <activity android:name=".StudentList" />

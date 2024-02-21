@@ -279,38 +279,6 @@
                 android:background="#bdbdbd"
                 android:visibility="gone" />
 
-            <!--Join Meeting-->
-            <LinearLayout
-                android:id="@+id/layout_video"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:contentDescription="@string/todo"
-                android:orientation="horizontal"
-                tools:ignore="UseCompoundDrawables">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_margin="5dp"
-                    android:contentDescription="@string/todo"
-                    android:src="@drawable/ic_videocam" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="@string/join_meeting"
-                    android:textColor="#000000"
-                    android:textSize="22sp" />
-            </LinearLayout>
-
-            <View
-                android:id="@+id/view_video"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#bdbdbd" />
-
             <!--Setting-->
             <LinearLayout
                 android:id="@+id/layout_setting"

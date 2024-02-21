@@ -1,12 +1,10 @@
 package com.convertex.wissme;
 
-import android.app.DownloadManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -21,7 +19,6 @@ import com.convertex.wissme.network.NetworkClient;
 import com.convertex.wissme.network.NetworkService;
 import com.convertex.wissme.utils.Constants;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;

@@ -125,11 +125,6 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.layout_video).setOnClickListener(view -> {
-            startActivity(new Intent(DashboardActivity.this, VideoCall.class));
-            drawerLayout.closeDrawer(Gravity.LEFT);
-        });
-
         findViewById(R.id.layout_com_work).setOnClickListener(v -> {
             startActivity(new Intent(DashboardActivity.this, Com_work.class));
             drawerLayout.closeDrawer(Gravity.LEFT);
@@ -388,7 +383,7 @@ public class DashboardActivity extends AppCompatActivity {
         call.enqueue(new Callback<GetImageModel>() {
             @Override
             public void onResponse(Call<GetImageModel> call, Response<GetImageModel> response) {
-                String imageUri = "https://wissme.000webhostapp.com/" + response.body().getUrl();
+                String imageUri = "https://wissmw.000webhostapp.com/" + response.body().getUrl();
                 image_profile = findViewById(R.id.image_profile_dash);
                 Picasso.with(getApplicationContext()).load(imageUri).into(image_profile);
             }
