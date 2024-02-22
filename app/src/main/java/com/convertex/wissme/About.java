@@ -24,7 +24,7 @@ public class About extends AppCompatActivity {
 
         tv1 = findViewById(R.id.insta1);
         tv1.setOnClickListener(view -> {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/i__m__arpit_/"));
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/_.kanudo_ii/"));
             startActivity(browserIntent);
         });
 
