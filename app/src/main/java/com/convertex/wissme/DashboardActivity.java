@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -19,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -57,6 +59,7 @@ public class DashboardActivity extends AppCompatActivity {
     SwipeRefreshLayout refresh;
     static final float END_SCALE = 0.8f;
 
+    @RequiresApi(api = Build.VERSION_CODES.ECLAIR)
     @SuppressLint({"WrongConstant", "SetTextI18n", "RtlHardcoded"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
