@@ -1,4 +1,4 @@
-package com.convertex.wissme;
+package com.convertex.wissme.stuTech;
 
 import android.annotation.SuppressLint;
 import android.app.DownloadManager;
@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.convertex.wissme.R;
 import com.convertex.wissme.model.WorkResponseModel;
 import com.convertex.wissme.network.NetworkClient;
 import com.convertex.wissme.network.NetworkService;

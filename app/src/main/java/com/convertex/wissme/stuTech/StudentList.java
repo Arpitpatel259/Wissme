@@ -1,4 +1,4 @@
-package com.convertex.wissme;
+package com.convertex.wissme.stuTech;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +16,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.convertex.wissme.R;
 import com.convertex.wissme.model.CompleteWorkModel;
 import com.convertex.wissme.model.CompleteWorkResponseModel;
 import com.convertex.wissme.network.NetworkClient;
@@ -29,36 +29,31 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Com_work extends AppCompatActivity {
+public class StudentList extends AppCompatActivity {
 
     ImageView imageView4;
     RecyclerView circular_work;
-    Boolean type;
+    TextView tx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_com_work);
+        setContentView(R.layout.activity_student_list);
 
-        circular_work = findViewById(R.id.circular_com_work);
+        tx = findViewById(R.id.beach);
+        circular_work = findViewById(R.id.circular_student_list);
         circular_work.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         circular_work.setHasFixedSize(true);
-
-        SharedPreferences preferences = getSharedPreferences(Constants.MyPREFERENCES, MODE_PRIVATE);
-        if (preferences.getString(Constants.KEY_TYPE, "N/A").equals("N/A")) {
-            Toast.makeText(Com_work.this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
-        } else type = preferences.getString ( Constants.KEY_TYPE, "N/A" ).equals ( "Departments" );
-
-        getCompleteWorkFors();
+        getCompleteWork();
 
 
         imageView4 = findViewById(R.id.image_menu4);
 
-        imageView4.setOnClickListener( v -> finish() );
+        imageView4.setOnClickListener(v -> finish());
     }
 
-    private void getCompleteWorkFors() {
-        ProgressDialog progressDialog = new ProgressDialog(Com_work.this);
+    private void getCompleteWork() {
+        ProgressDialog progressDialog = new ProgressDialog(StudentList.this);
         progressDialog.setTitle("Please wait...");
         progressDialog.setMessage("Getting Works..");
         progressDialog.setCancelable(false);
@@ -67,20 +62,27 @@ public class Com_work extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences(Constants.MyPREFERENCES, MODE_PRIVATE);
 
         NetworkService networkService = NetworkClient.getClient().create(NetworkService.class);
-        Call<CompleteWorkResponseModel> gasworks = networkService.getComWorkByEmail( preferences.getString(Constants.Email, "N/A"), preferences.getString(Constants.KEY_ORG, "N/A") );
+        Call<CompleteWorkResponseModel> get_works = networkService.getComWorkForDepart(preferences.getString(Constants.Email, "N/A"), preferences.getString(Constants.KEY_ORG, "N/A"), getIntent().getStringExtra("id"));
 
-        gasworks.enqueue(new Callback<CompleteWorkResponseModel>() {
+        get_works.enqueue(new Callback<CompleteWorkResponseModel>() {
             @Override
             public void onResponse(Call<CompleteWorkResponseModel> call, Response<CompleteWorkResponseModel> response) {
 
-                WorkAdapter workAdapter = new WorkAdapter(response.body().getComWork().getComWork());
-                circular_work.setAdapter(workAdapter);
-                progressDialog.cancel();
+                if (response.body() != null && response.body().getComWork() != null && response.body().getComWork().getComWork() != null) {
+                    circular_work.setVisibility(View.VISIBLE);
+                    tx.setVisibility(View.GONE);
+                    WorkAdapter workAdapter = new WorkAdapter(response.body().getComWork().getComWork());
+                    circular_work.setAdapter(workAdapter);
+                } else {
+                    circular_work.setVisibility(View.GONE);
+                    tx.setVisibility(View.VISIBLE);
+                }
+                progressDialog.dismiss();
             }
 
             @Override
             public void onFailure(Call<CompleteWorkResponseModel> call, Throwable t) {
-                progressDialog.cancel();
+                progressDialog.dismiss();
             }
         });
     }
@@ -101,22 +103,22 @@ public class Com_work extends AppCompatActivity {
         @NonNull
         @Override
         public WorkViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new WorkViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.work_item_container, parent, false));
+            return new WorkViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.department_com_work, parent, false));
         }
 
         @Override
         public void onBindViewHolder(@NonNull WorkViewHolder holder, int position) {
             //classname
-            if (work.get(position).getWork_sub() != null && !work.get(position).getWork_sub().equals("")) {
-                holder.classname.setText(work.get(position).getWork_sub());
+            if (work.get(position).getEnrollment() != null && !work.get(position).getEnrollment().equals("")) {
+                holder.enroll.setText(work.get(position).getEnrollment());
             } else {
-                holder.classname.setVisibility(View.GONE);
+                holder.enroll.setVisibility(View.GONE);
             }
             //work title
-            if (work.get(position).getWork_title() != null && !work.get(position).getWork_title().equals("")) {
-                holder.title.setText(work.get(position).getWork_title());
+            if (work.get(position).getName() != null && !work.get(position).getName().equals("")) {
+                holder.name.setText(work.get(position).getName());
             } else {
-                holder.title.setVisibility(View.GONE);
+                holder.name.setVisibility(View.GONE);
             }
             //work end time
             if (work.get(position).getSubmit_date() != null && !work.get(position).getSubmit_date().equals("")) {
@@ -125,7 +127,7 @@ public class Com_work extends AppCompatActivity {
                 holder.end_time.setVisibility(View.GONE);
             }
 
-            holder.cardWork.setOnClickListener( v -> {
+            holder.cardWork.setOnClickListener(v -> {
                 Intent intent = new Intent(getApplicationContext(), ComWorkDetail.class);
                 intent.putExtra("wid", work.get(holder.getAdapterPosition()).getWork_id());
                 intent.putExtra("filename", work.get(holder.getAdapterPosition()).getFilename());
@@ -135,19 +137,20 @@ public class Com_work extends AppCompatActivity {
                 intent.putExtra("url", work.get(holder.getAdapterPosition()).getUrl());
 
                 startActivity(intent);
-            } );
+            });
+
         }
 
         class WorkViewHolder extends RecyclerView.ViewHolder {
             CardView cardWork;
-            TextView classname, title, end_time;
+            TextView name, enroll, end_time;
 
             WorkViewHolder(View view) {
                 super(view);
-                classname = view.findViewById(R.id.text_item_classname);
-                title = view.findViewById(R.id.text_item_title);
-                end_time = view.findViewById(R.id.text_item_end_time);
-                cardWork = view.findViewById(R.id.item_card_view);
+                name = view.findViewById(R.id.text_names);
+                enroll = view.findViewById(R.id.text_enrolls);
+                end_time = view.findViewById(R.id.submitted_date);
+                cardWork = view.findViewById(R.id.work_card_view);
             }
         }
     }

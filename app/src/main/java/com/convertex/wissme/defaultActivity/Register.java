@@ -1,4 +1,4 @@
-package com.convertex.wissme;
+package com.convertex.wissme.defaultActivity;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -22,6 +22,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.convertex.wissme.R;
 import com.convertex.wissme.model.OrganizationResponseModel;
 import com.convertex.wissme.model.RegistrationResponseModel;
 import com.convertex.wissme.network.NetworkClient;

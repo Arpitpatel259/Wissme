@@ -1,4 +1,4 @@
-package com.convertex.wissme;
+package com.convertex.wissme.stuTech;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.convertex.wissme.R;
 import com.convertex.wissme.model.OrganizationResponseModel;
 import com.convertex.wissme.network.NetworkClient;
 import com.convertex.wissme.network.NetworkService;

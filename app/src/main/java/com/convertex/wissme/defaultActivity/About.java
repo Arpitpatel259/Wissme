@@ -1,4 +1,4 @@
-package com.convertex.wissme;
+package com.convertex.wissme.defaultActivity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.convertex.wissme.R;
 
 public class About extends AppCompatActivity {
 

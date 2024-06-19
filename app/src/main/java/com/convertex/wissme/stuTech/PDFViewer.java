@@ -1,4 +1,4 @@
-package com.convertex.wissme;
+package com.convertex.wissme.stuTech;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.convertex.wissme.R;
 import com.convertex.wissme.utils.Constants;
 
 import es.voghdev.pdfviewpager.library.RemotePDFViewPager;

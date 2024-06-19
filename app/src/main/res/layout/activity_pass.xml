@@ -7,7 +7,7 @@
     android:background="@color/white"
     android:orientation="vertical"
     android:scrollbars="none"
-    tools:context=".Pass">
+    tools:context=".defaultActivity.Pass">
 
     <LinearLayout
         android:layout_width="match_parent"

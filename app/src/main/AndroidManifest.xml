@@ -20,20 +20,20 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Participate"
+            android:name=".defaultActivity.Participate"
             android:exported="false" />
-        <activity android:name=".StudentList" />
-        <activity android:name=".EditWork" />
-        <activity android:name=".PDFViewer" />
-        <activity android:name=".ComWorkDetail" />
-        <activity android:name=".WorkDetails" />
-        <activity android:name=".AssignWork" />
-        <activity android:name=".Com_work" />
-        <activity android:name=".About" />
-        <activity android:name=".Setting" />
-        <activity android:name=".Register" />
-        <activity android:name=".Login" />
-        <activity android:name=".Pass" />
+        <activity android:name=".stuTech.StudentList" />
+        <activity android:name=".stuTech.EditWork" />
+        <activity android:name=".stuTech.PDFViewer" />
+        <activity android:name=".stuTech.ComWorkDetail" />
+        <activity android:name=".stuTech.WorkDetails" />
+        <activity android:name=".stuTech.AssignWork" />
+        <activity android:name=".stuTech.Com_work" />
+        <activity android:name=".defaultActivity.About" />
+        <activity android:name=".defaultActivity.Setting" />
+        <activity android:name=".defaultActivity.Register" />
+        <activity android:name=".defaultActivity.Login" />
+        <activity android:name=".defaultActivity.Pass" />
         <activity android:name=".DashboardActivity" />
         <activity
             android:name=".MainActivity"

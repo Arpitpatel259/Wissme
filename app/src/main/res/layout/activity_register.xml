@@ -7,7 +7,7 @@
     android:orientation="horizontal"
     android:scrollbars="none"
     android:background="@color/white"
-    tools:context=".Register">
+    tools:context=".defaultActivity.Register">
 
     <LinearLayout
         android:layout_width="match_parent"

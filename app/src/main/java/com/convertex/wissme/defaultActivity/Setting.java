@@ -1,4 +1,4 @@
-package com.convertex.wissme;
+package com.convertex.wissme.defaultActivity;
 
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
@@ -18,6 +18,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.convertex.wissme.R;
 import com.convertex.wissme.model.GetImageModel;
 import com.convertex.wissme.model.ImageModel;
 import com.convertex.wissme.network.NetworkClient;

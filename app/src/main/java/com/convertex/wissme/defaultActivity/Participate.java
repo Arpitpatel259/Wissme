@@ -1,4 +1,4 @@
-package com.convertex.wissme;
+package com.convertex.wissme.defaultActivity;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -19,6 +19,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.convertex.wissme.R;
 import com.convertex.wissme.model.LoginResponseModel;
 import com.convertex.wissme.model.UserModel;
 import com.convertex.wissme.network.NetworkClient;
