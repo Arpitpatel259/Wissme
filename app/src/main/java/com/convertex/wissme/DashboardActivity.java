@@ -28,6 +28,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.bumptech.glide.Glide;
 import com.convertex.wissme.defaultActivity.About;
 import com.convertex.wissme.defaultActivity.Login;
 import com.convertex.wissme.defaultActivity.Participate;
@@ -60,7 +61,7 @@ public class DashboardActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ImageView imageView;
     TextView text_email, network, text_name;
-    CircularImageView image_profile;
+    CircularImageView imageprofile;
     SharedPreferences preferences;
     Boolean type, conn;
     RecyclerView circular_work;
@@ -87,7 +88,7 @@ public class DashboardActivity extends AppCompatActivity {
         contentView = findViewById(R.id.contentView);
         drawerLayout = findViewById(R.id.drawer_layout);
         imageView = findViewById(R.id.image_menu);
-        image_profile = findViewById(R.id.image_profile_dash);
+        imageprofile = findViewById(R.id.image_profile_dash);
         text_email = findViewById(R.id.text_email);
         fab = findViewById(R.id.fab);
         text_name = findViewById(R.id.text_name);
@@ -388,6 +389,24 @@ public class DashboardActivity extends AppCompatActivity {
         return conn;
     }
 
+    /*private void GetImage() {
+        preferences = getSharedPreferences(Constants.MyPREFERENCES, MODE_PRIVATE);
+        NetworkService networkService = NetworkClient.getClient().create(NetworkService.class);
+        Call<GetImageModel> call = networkService.getImage(preferences.getString(Constants.Email, "N/A"));
+        call.enqueue(new Callback<GetImageModel>() {
+            @Override
+            public void onResponse(Call<GetImageModel> call, Response<GetImageModel> response) {
+                String imageUri = Constants.BASE_URL + response.body().getUrl();
+                image_profile = findViewById(R.id.image_profile_dash);
+                Picasso.with(getApplicationContext()).load(imageUri).into(image_profile);
+            }
+
+            @Override
+            public void onFailure(Call<GetImageModel> call, Throwable t) {
+            }
+        });
+    }*/
+
     private void GetImage() {
         preferences = getSharedPreferences(Constants.MyPREFERENCES, MODE_PRIVATE);
         NetworkService networkService = NetworkClient.getClient().create(NetworkService.class);
@@ -395,13 +414,19 @@ public class DashboardActivity extends AppCompatActivity {
         call.enqueue(new Callback<GetImageModel>() {
             @Override
             public void onResponse(Call<GetImageModel> call, Response<GetImageModel> response) {
-                String imageUri = "https://wissmw.000webhostapp.com/" + response.body().getUrl();
-                image_profile = findViewById(R.id.image_profile_dash);
-                Picasso.with(getApplicationContext()).load(imageUri).into(image_profile);
+                if (response.isSuccessful() && response.body() != null) {
+                    String imageUri = Constants.BASE_URL + response.body().getUrl();
+                    Glide.with(getApplicationContext())
+                            .load(imageUri)
+                            .placeholder(android.R.drawable.ic_menu_gallery) // Default placeholder image
+                            .error(android.R.drawable.ic_menu_close_clear_cancel) // Default error image
+                            .into(imageprofile);
+                }
             }
 
             @Override
             public void onFailure(Call<GetImageModel> call, Throwable t) {
+                // Handle failure
             }
         });
     }

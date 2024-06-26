@@ -109,7 +109,7 @@ public class Setting extends AppCompatActivity {
         call.enqueue ( new Callback<GetImageModel> ( ) {
             @Override
             public void onResponse(Call<GetImageModel> call, Response<GetImageModel> response) {
-                String imageUri = "https://wissme.000webhostapp.com/" + response.body ( ).getUrl ( );
+                String imageUri = Constants.BASE_URL + response.body ( ).getUrl ( );
                 image_profile = findViewById ( R.id.image_profile );
                 Picasso.with ( getApplicationContext ( ) ).load ( imageUri ).into ( image_profile );
             }
